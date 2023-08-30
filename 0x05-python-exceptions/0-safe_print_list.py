@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 
-def print_partial_list(input_list=[], limit=0):
-    """Print a specified number of elements from a list.
+def safe_print_list(my_list=[], x=0):
+    """Print x elememts of a list.
 
     Args:
-        input_list (list): The list containing elements to print from.
-        limit (int): The maximum number of elements to print from the list.
+        my_list (list): The list to print elements from.
+        x (int): The number of elements of my_list to print.
 
     Returns:
-        The number of elements successfully printed.
+        The number of elements printed.
     """
-    printed_count = 0
-    for idx in range(limit):
+    ret = 0
+    for i in range(x):
         try:
-            print("{}".format(input_list[idx]), end="")
-            printed_count += 1
+            print("{}".format(my_list[i]), end="")
+            ret += 1
         except IndexError:
             break
     print("")
-    return printed_count
+    return (ret)
